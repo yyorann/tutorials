@@ -1,0 +1,13 @@
+----------
+laracast-inertia
+----------
+
+/demo
+
+tutorialfolder> laravel new demo	
+tutorialfolder> cd demo
+tutorialfolder\demo> composer require laravel/jetstream
+tutorialfolder\demo> php artisan jetstream:install inertia --ssr
+
+bron:(https://dev.to/moose_said/working-with-laravel-jetstream-vuejs-3-inertiajs-with-ssr-support-1ehh#chapter-1)
+
