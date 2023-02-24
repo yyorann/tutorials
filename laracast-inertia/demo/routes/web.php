@@ -15,14 +15,63 @@ use Inertia\Inertia;
 |
 */
 
+// // OLD Welcome.vue PAGE
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
+
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+    return Inertia::render('Home');
+});
+
+
+Route::get('/users', function() {
+    return Inertia::render('Users', [
+        'time' => now()->toTimeString(),
     ]);
 });
+
+Route::get('/settings', function() {
+    return Inertia::render('Settings');
+});
+
+Route::post('/logout', function() {
+    dd('logging out...');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::middleware([
     'auth:sanctum',
