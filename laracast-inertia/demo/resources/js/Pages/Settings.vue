@@ -1,11 +1,16 @@
 <template>
-    <Layout>
+    <!-- <Layout> -->
         <h1 class="text-3xl ">
             Settings
         </h1>
-    </Layout>
+    <!-- </Layout> -->
 </template>
 
-<script setup>
+<script>
     import Layout from '../Shared/Layout.vue';
+
+    export default {
+        components: { Layout },
+        layout: Layout,
+    }
 </script>
