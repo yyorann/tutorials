@@ -1,16 +1,13 @@
 <template>
-    <!-- <Layout> -->
-        <h1 class="text-3xl ">
-            Users
-        </h1>
-    <!-- </Layout> -->
+    <Head>
+        <title> {{ $page.component }} </title>
+    </Head>
+
+    <h1 class="text-3xl ">
+        {{ $page.component }}
+    </h1>
 </template>
 
-<script>
-    import Layout from '../Shared/Layout.vue';
+<script setup>
 
-    export default {
-        components: { Layout },
-        layout: Layout,
-    }
 </script>   

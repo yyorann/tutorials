@@ -1,16 +1,18 @@
 <template>
-    <!-- <Layout> -->
-        <h1 class="text-3xl ">
-            Home
-        </h1>
-    <!-- </Layout> -->
+    <Head>
+        <title> {{$page.component}} </title>
+        <meta
+            type="description"
+            content="Home information"
+            head-key="description"        
+        >
+    </Head>
+    
+    <h1 class="text-3xl">
+        {{ $page.component }}
+    </h1>
 </template>
 
-<script>
-    import Layout from '../Shared/Layout.vue';
-    
-    export default {
-        components: { Layout },
-        layout: Layout,
-    }
+<script setup>
+
 </script>
