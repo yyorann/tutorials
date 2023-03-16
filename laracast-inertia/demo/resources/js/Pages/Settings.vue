@@ -3,7 +3,7 @@
         <title> {{ $page.component }} </title>
     </Head>
 
-    <h1 class="text-3xl ">
+    <h1 class="text-3xl">
         {{ $page.component }}
     </h1>
 </template>
