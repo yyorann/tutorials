@@ -16,20 +16,11 @@ use App\Models\User;
 |
 */
 
-// // OLD Welcome.vue PAGE
-// Route::get('/', function () {
-//     return Inertia::render('Welcome', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
+
 
 Route::get('/', function () {
     return Inertia::render('Home');
 });
-
 
 Route::get('/users', function() {
     // return User::paginate(10);
@@ -38,13 +29,6 @@ Route::get('/users', function() {
             'id' => $user -> id,
             'name' => $user -> name
         ]),
-
-
-
-        // 'users' => User::all() -> map(fn($user) => [
-        //     'id' => $user -> id,
-        //     'name' => $user -> name
-        // ])
     ]);
 });
 
