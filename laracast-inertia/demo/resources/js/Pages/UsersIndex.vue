@@ -46,16 +46,21 @@
 <script setup>
     import Pagination from "../Shared/Pagination.vue";
     import { ref, watch } from "vue";
-    import {Inertia} from "@inertiajs/inertia";
+    // import {Inertia} from "@inertiajs/inertia";
+    import { router } from '@inertiajs/vue3'    // gebruik { router } ipv { Inertia }. 
 
 
-    defineProps({ users: Object });
-    
-    let search = ref('');
+    let props = defineProps({
+        users: Object,
+        filters: Object
+    });
+    let search = ref(props.filters.search);
 
-    watch( search, value => {
-        Inertia.get('')
-    })
-
-
+    watch(search, value => {
+        router.get( '/users', {search: value}, {
+                preserveState: true,
+                replace: true
+            }
+        );
+    });
 </script>   
