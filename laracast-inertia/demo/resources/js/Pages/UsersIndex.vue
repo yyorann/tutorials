@@ -4,7 +4,11 @@
     </Head>
 
     <div class="flex justify-between mb-6">
-        <h1 class="text-3xl"> {{ $page.component }} </h1>
+        <div class="flex items-center">
+            <h1 class="text-3xl"> Users </h1>
+
+            <Link href="/users/create" class="text-blue-500 text-sm ml-2" > New User </Link>
+        </div>
 
         <input type="text" placeholder="search..." class="border px-2 rounded-lg" v-model="search">
     </div>
@@ -44,18 +48,21 @@
 
 
 <script setup>
-    import Pagination from "../Shared/Pagination.vue";
-    import { ref, watch } from "vue";
-    import {Inertia} from "@inertiajs/inertia";
+import Pagination from '../Shared/Pagination.vue';
+import { ref, watch } from "vue";
+import { router } from '@inertiajs/vue3'  // import { Inertia } from "@inertiajs/inertia"
 
+let props = defineProps({
+    users: Object,
+    filters: Object
+});
 
-    defineProps({ users: Object });
-    
-    let search = ref('');
+let search = ref(props.filters.search);
 
-    watch( search, value => {
-        Inertia.get('')
-    })
-
-
+watch(search, value => {
+    router.get('/users', {search: value}, {
+        preserveState: true,
+        replace: true
+    });
+});
 </script>   
