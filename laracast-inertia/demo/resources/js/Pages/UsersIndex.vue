@@ -48,21 +48,21 @@
 
 
 <script setup>
-import Pagination from '../Shared/Pagination.vue';
-import { ref, watch } from "vue";
-import { router } from '@inertiajs/vue3'  // import { Inertia } from "@inertiajs/inertia"
-import { debounce } from "lodash";
+    import Pagination from '../Shared/Pagination.vue';
+    import { ref, watch } from "vue";
+    import { router } from '@inertiajs/vue3';
+    import { debounce } from "lodash";
 
-let props = defineProps({
-    users: Object,
-    filters: Object
-});
-
-let search = ref(props.filters.search);
+    let props = defineProps({
+        users: Object,
+        filters: Object
+    });
 
 
-watch(search, debounce( value => {
-    router.get('/users', {search: value}, {preserveState: true, replace: true});
-}, 500));
+    let search = ref(props.filters.search);
 
+
+    watch(search, debounce( value => {
+        router.get('/users', {search: value}, {preserveState: true, replace: true});
+    }, 500));
 </script>   

@@ -50,8 +50,6 @@
 
 
 <script setup>
-    // import { reactive, ref } from "vue";
-    // import { router } from '@inertiajs/vue3';
     import { useForm } from "@inertiajs/inertia-vue3";
 
     defineProps({ errors: Object });
@@ -61,11 +59,8 @@
         email: '',
         password: '',
     });
-
-
-    // let processing = ref(false);
-
+    
     let submit = () => {
-        form.post('/users')
+        form.post('/users');
     };
 </script>
