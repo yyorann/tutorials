@@ -2,9 +2,10 @@
 
 namespace App\Http\Middleware;
 
-use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -38,12 +39,14 @@ class HandleInertiaRequests extends Middleware
                 ]);
             },
 
-            'auth' => [
-                'user' => [
-                    'username' => 'John Doe'
-                ]
-            ]
 
+
+
+            'auth' => (Auth::User()) ? [
+                'user' => [
+                    'username' => Auth::User() -> name
+                ]
+            ] : null
         ]);
     }
 }

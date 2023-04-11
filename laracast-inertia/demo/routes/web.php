@@ -11,6 +11,8 @@ Route::get('login', [LoginController::class, 'create']) -> name('login');
 
 Route::post('login', [LoginController::class, 'store']);
 
+Route::post('logout', [LoginController::class, 'destroy']) -> middleware('auth');
+
 
 
 Route::middleware('auth')->group(function() {
@@ -44,11 +46,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/users/create', function(){
         return Inertia::render('UsersCreate');
     });
-    
-    Route::post('/logout', function() {
-        dd('logging out...');
-    });
-    
+        
     Route::post('/users', function() {
         // sleep(3);
     
@@ -71,14 +69,19 @@ Route::middleware('auth')->group(function() {
     });
 });
 
-Route::get('/users/create', function() {
-    return Inertia::render('UsersCreate');
-});
 
 
-Route::get('/setings', function() {
-    return Inertia::render('Settings');
-});
+
+
+
+// Route::get('/users/create', function() {
+//     return Inertia::render('UsersCreate');
+// });
+
+
+// Route::get('/setings', function() {
+//     return Inertia::render('Settings');
+// });
 
 
 
