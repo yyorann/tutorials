@@ -15,7 +15,7 @@ createInertiaApp({
     resolve: async name => {
         let page = (await import(`./Pages/${name}.vue`)).default;
 
-        // console.log(Layout);
+        console.log(Layout);
 
         if (page.layout == undefined) {
             page.layout = Layout;

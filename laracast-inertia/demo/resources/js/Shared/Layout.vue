@@ -17,7 +17,7 @@
                     My App
                 </h1>
                 
-                <p v-if="$page.props.auth.user.username" class="text-sm ml-4">
+                <p class="text-sm ml-4">
                     Welcome Back, {{ $page.props.auth.user.username }}!
                 </p>
             </div>
@@ -30,7 +30,9 @@
 
     <section class="p-6">
         <div class="max-w-3xl mx-auto">
-                        
+            <!-- <iframe height="200px" width="100%" frameborder="no" scrolling="no" seamless src="https://player.simplecast.com/b83b0a3a-c934-480e-af5d-3007fccd57b6?dark=false">
+            </iframe> -->
+            
             <slot/>
 
         </div>
