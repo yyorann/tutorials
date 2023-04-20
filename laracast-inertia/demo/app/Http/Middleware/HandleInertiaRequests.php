@@ -38,15 +38,21 @@ class HandleInertiaRequests extends Middleware
                     'location' => $request->url(),
                 ]);
             },
-
-
-
-
-            'auth' => (Auth::User()) ? [
+            
+            'auth' => Auth::user() ? [
                 'user' => [
-                    'username' => Auth::User() -> name
+                    'username' => auth()->user()->name
                 ]
             ] : null
         ]);
     }
 }
+
+
+
+// 'auth' => Auth::user() ? [
+//     'user' => [
+//         // ook een idee: auth()->user()->only(['name']),
+//         'username' => auth()->user()->name
+//     ]
+// ] : null

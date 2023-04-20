@@ -17,7 +17,7 @@
                     My App
                 </h1>
                 
-                <p v-if="$page.props.auth.user.username" class="text-sm ml-4">
+                <p v-if="$page.props.auth?.user.username" class="text-sm ml-4">
                     Welcome Back, {{ $page.props.auth.user.username }}!
                 </p>
             </div>
